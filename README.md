@@ -26,9 +26,6 @@ This example server exposes a single tool:
 *   **`package.json`**, **`package-lock.json`**: These files are required for installing the `mcp` library.
 *   **`README.md`**: This document you are currently reading.
 
-*   **`venv`**: A virtual environment directory (optional, but recommended) to isolate project dependencies.
-
-*   **`node_modules`**: The dependencies used by this MCP. They must be installed before runtime.
 
 ## Getting Started
 
