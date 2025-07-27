@@ -1,10 +1,6 @@
 # Simplest MCP Ever
 
-This repository demonstrates a minimal, working example of a [Modular Code Platform (MCP)](https://modcode.org/) server.  It's designed to be a starting point for developers looking to understand and build their own MCP-compatible tools and applications.
-
-## What is MCP?
-
-MCP enables a modular, tool-centric approach to software development.  An MCP server exposes a set of tools that client applications can discover and invoke.  This fosters interoperability and composability across different systems.
+This repository demonstrates a minimal, working example of an MCP server and client. There's no LLM involved, this uses what's called the "stdio" method.
 
 ## Functionality
 
@@ -63,24 +59,3 @@ Follow these steps to run the example:
     ✅ All tests passed!
     ```
 
-## Understanding the Code
-
-*   **`server.py`**: Pay close attention to the `@app.list_tools()` and `@app.call_tool()` decorators. These link functions to particular MCP functionalities.  The `list_tools` has to provide a *list* of `Tool` types, and the `call_tool` can call different functions depending on the tool `name`.
-
-*   **`test_mcp.py`**:  This illustrates how MCP clients connect to servers and call tools. It showcases the initialization process, tool discovery, and tool invocation. Using `StdioServerParameters` as the server paramater for client is critical to allowing the client to communicate correctly with the server.
-
-## Expanding the Example
-
-This example serves as a foundation. You can extend it by:
-
-*   **Adding more tools:** Define new functions decorated with `@app.call_tool()` to expose more functionality. Don't forget to add their definitions to the `list_tools` call.
-*   **Accepting arguments:** Modify the tool's input schema and the `call_tool` function to accept arguments from the client.
-*   **Connecting to external systems:** Integrate the tools with databases, APIs, or other services to perform real-world tasks.
-*   **Using more sophisticated return values:** Using the `TextContent` to return results helps standardise output.
-
-## Resources
-
-*   **[Modular Code Platform (MCP) Specification](https://modcode.org/)**: The official documentation for the MCP standard. Be sure to read up on this when creating tools with more functionality.
-
-This simple example should provide a solid entry point for exploring the world of MCP and building your own interoperable applications!
-```
