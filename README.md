@@ -23,29 +23,10 @@ This example server exposes a single tool:
 
 *   **`test.sh`**: A simple shell script to execute the tests. It activates the virtual environment (if one exists) before running the test to ensure dependencies are correctly managed.
 
-*   **`package.json`**, **`package-lock.json`**: These files are required for installing the `mcp` library.
-*   **`README.md`**: This document you are currently reading.
-
 
 ## Getting Started
 
 Follow these steps to run the example:
-
-1.  **Clone the Repository:**
-
-    ```bash
-    git clone <repository URL>
-    cd <repository directory>
-    ```
-
-2. **Install dependencies**
-
-    *   Make sure you have node and npm installed.
-    *   Run the following command
-
-    ```bash
-    npm install
-    ```
 
 3.  **Set up a Virtual Environment (Recommended):**
 
