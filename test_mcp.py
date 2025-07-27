@@ -3,17 +3,17 @@
 import asyncio
 import subprocess
 import json
-from mcp.client.stdio import stdio_client
+from mcp.client.stdio import stdio_client, StdioServerParameters
 from mcp.client.session import ClientSession
 
 async def test_favorite_number_server():
     """Test the favorite number MCP server"""
     
-    # Start the server
-    server_params = {
-        "command": "python",
-        "args": ["server.py"]
-    }
+    # Start the server with proper parameter object
+    server_params = StdioServerParameters(
+        command="python",
+        args=["server.py"]
+    )
     
     async with stdio_client(server_params) as streams:
         read_stream, write_stream = streams
