@@ -1,4 +1,3 @@
-```markdown
 # Simplest MCP Ever
 
 This repository demonstrates a minimal, working example of a [Modular Code Platform (MCP)](https://modcode.org/) server.  It's designed to be a starting point for developers looking to understand and build their own MCP-compatible tools and applications.
@@ -107,4 +106,3 @@ This example serves as a foundation. You can extend it by:
 
 This simple example should provide a solid entry point for exploring the world of MCP and building your own interoperable applications!
 ```
-
