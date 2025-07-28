@@ -2,6 +2,8 @@
 
 This repository demonstrates a minimal, working example of an MCP server and client. There's no LLM involved, this uses what's called the "stdio" method.
 
+However, there are branches that introduce things such as LLMs. After understanding the base code, go to the various branches to see how things get stacked on top.
+
 ## Functionality
 
 This example server exposes a single tool:
