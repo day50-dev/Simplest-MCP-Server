@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-"""
-Simple LLM server that supports tool calling
-"""
 
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -12,7 +9,7 @@ import re
 app = Flask(__name__)
 
 class LLMToolServer:
-    def __init__(self, model_name="Qwen/Qwen2.5-0.5B-Instruct"):
+    def __init__(self, model_name="Qwen/Qwen3-0.6B"):
         """Initialize the LLM server with tool calling capabilities"""
         print(f"Loading model: {model_name}")
         
