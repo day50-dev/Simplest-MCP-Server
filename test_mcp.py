@@ -5,6 +5,7 @@ Test client for LLM tool calling
 
 import requests
 import json
+defhost="localhost:8000"
 
 class ToolHandler:
     """Handles tool execution"""
@@ -21,11 +22,11 @@ class ToolHandler:
         }
         return favorites.get(user_id, favorites["default"])
 
-def call_llm(prompt, server_url="http://localhost:5000"):
+def call_llm(prompt, server_url=f"http://{defhost}"):
     """Call the LLM server"""
     try:
         response = requests.post(
-            f"{server_url}/generate",
+            f"{server_url}/v1/generate",
             json={
                 "prompt": prompt,
                 "max_length": 200,
@@ -108,12 +109,12 @@ def test_non_tool_prompt():
 
 def main():
     print("Tool Calling Test Client")
-    print("Make sure the LLM server is running on localhost:5000")
+    print(f"Make sure the LLM server is running on {defhost}")
     print("-" * 50)
     
     # Check if server is up
     try:
-        response = requests.get("http://localhost:5000/health", timeout=5)
+        response = requests.get(f"http://{defhost}/health", timeout=5)
         if response.status_code == 200:
             print("✓ LLM server is running")
         else:

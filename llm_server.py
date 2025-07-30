@@ -17,13 +17,14 @@ class LLMToolServer:
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForCausalLM.from_pretrained(
             model_name,
+            padding=True,
             torch_dtype=torch.float32,
             device_map="cpu",
             low_cpu_mem_usage=True
         )
         
         if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.tokenizer.pad_token = '<|endoftext|>' #self.tokenizer.eos_token
             
         print("Model loaded successfully!")
     
